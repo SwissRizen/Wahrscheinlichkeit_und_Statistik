@@ -1,11 +1,11 @@
 \section{Konvergenz in Wahrscheinlichkeitsräumen}
-\begin{subbox}{Unabhängigkeit einer Folge und iid./uiv.}
-    Eine Folge von ZV $X_1, X_2, \ldots$ ist unabhängig, wenn $X_1, \ldots, X_n$ unabhängig ($\forall n \in \N$, nach der Definition in 2.1).
+\begin{subbox}{Independence einer Folge und iid./uiv.}
+    Eine Folge von RV $X_1, X_2, \ldots$ ist independent, wenn $X_1, \ldots, X_n$ independent ($\forall n \in \N$, nach der Definition in 2.1).
     Sie ist zudem \textbf{uiv./iid.}, falls $F_{X_i} = F_{X_j}, \forall i,j \in \N$.
 \end{subbox}
-In einem Wahrscheinlichkeitsraum können wir für eine Folge von Zufallsvariablen $X_1, X_2, \ldots$ und einer ZV $Z$ zwischen 3 Arten von Konvergenz unterscheiden:
+In einem Probability Space können wir für eine Folge von Random Variables $X_1, X_2, \ldots$ und einer RV $Z$ zwischen 3 Arten von Konvergenz unterscheiden:
 \begin{enumerate}
-    \item \textbf{schwache Konvergenz / Konvergenz in Verteilung}\\
+    \item \textba.s.hwache Konvergenz / Konvergenz in Distribution}\\
     Wir definieren $X_n \overset{d}{\longrightarrow} Z$ ($d$ for distribution) als
     $$\limn \P(X_n \leq x) = \limn F_{X_n}(x) = F_Z(x) = \P(Z \leq x)$$
     für jede Stetigkeitsstelle $x\in \R$ von $F_Z$.
@@ -13,10 +13,10 @@ In einem Wahrscheinlichkeitsraum können wir für eine Folge von Zufallsvariable
     Wir definieren $X_n \overset{\P}{\longrightarrow} Z$ als
     $$\forall \varepsilon > 0 \quad \limn \P(|X_n - Z| > \varepsilon) = 0$$
     \item \textbf{Fast-sichere Konvergenz}\\
-    Wir definieren $X_n \overset{\textbf{f.s.}}{\longrightarrow} Z$ als
+    Wir definieren $X_n \overset{\textbf{a.s.}}{\longrightarrow} Z$ als
     $$\P(\{\omega \in \Omega \mid \limn X_n(\omega) = Z(\omega)\}) = 1$$
 \end{enumerate}
-Wir haben dann auch $$X_n \overset{\textbf{f.s.}}{\longrightarrow} Z \implies X_n \overset{\P}{\longrightarrow} Z \implies X_n \overset{d}{\longrightarrow} Z$$
+Wir haben dann auch $$X_n \overset{\textbf{a.s.}}{\longrightarrow} Z \implies X_n \overset{\P}{\longrightarrow} Z \implies X_n \overset{d}{\longrightarrow} Z$$
 Die Umkehrung der Implikationen gilt nicht, wie folgende Beispiele zeigen:
 \begin{enumerate}
     \item $X_n \overset{d}{\longrightarrow} Z \centernot\implies X_n \overset{\P}{\longrightarrow} Z$
@@ -37,9 +37,9 @@ Die Umkehrung der Implikationen gilt nicht, wie folgende Beispiele zeigen:
     Da aber $|X_n(\omega) - Z(\omega)| = 1, \forall \omega \in \Omega$ und demzufolge\\ 
     $\limn \P(|X_n - Z| > \epsilon) \centernot\longrightarrow 0$ für $n \to \infty$, gilt  
     $$X_n \overset{\P}{\centernot\longrightarrow} Z$$
-    \item $X_n \overset{\P}{\longrightarrow} Z \centernot\implies X_n \overset{\textbf{f.s.}}{\longrightarrow} Z$
+    \item $X_n \overset{\P}{\longrightarrow} Z \centernot\implies X_n \overset{\textbf{a.s.}}{\longrightarrow} Z$
     
-    Wir betrachten den Wahrscheinlichkeitsraum $([0,1], \mathcal{B}, \P)$.
+    Wir betrachten den Probability Space $([0,1], \mathcal{B}, \P)$.
     Für ein beliebiges $n \in \N$ sei $k = \lfloor\log_2(n)\rfloor$ und $j \in \{0, \ldots, 2^k-1\}$, sodass $n = 2^k + j$.
     
     Dann definieren wir 
@@ -50,19 +50,19 @@ Die Umkehrung der Implikationen gilt nicht, wie folgende Beispiele zeigen:
     $$X_1 = \mathds{1}_{[0,1]}, X_2 = \mathds{1}_{\left[0,\frac{1}{2}\right]}, X_3 = \mathds{1}_{\left[\frac{1}{2}, 1\right]}, X_4 = \mathds{1}_{\left[0,\frac{1}{4}\right]} \text{ etc.}$$
     Wir hätten dann
     $$\forall \varepsilon > 0 \quad \limn \P(|X_n - Z| > \varepsilon) = 0 \implies X_n \overset{\P}{\longrightarrow} Z$$
-    Aber für jedes $\omega \in [0,1]$ finden wir unendlich viele $X_n$ mit $X_n(\omega) = 1$ und deshalb
-    $$\P(\{\omega \in [0,1] \mid \limn X_n(\omega) = Z(\omega)\}) = 0 \implies X_n \overset{\textbf{f.s.}}{\centernot\longrightarrow} Z$$
+    Aber für jedes $\omega \in [0,1]$ finden wir unfinite viele $X_n$ mit $X_n(\omega) = 1$ und deshalb
+    $$\P(\{\omega \in [0,1] \mid \limn X_n(\omega) = Z(\omega)\}) = 0 \implies X_n \overset{\textbf{a.s.}}{\centernot\longrightarrow} Z$$
 \end{enumerate}
-\subsection{Gesetz der grossen Zahlen}
-\begin{mainbox}{starkes Gesetz der grossen Zahlen}
-    Sei $X_1, X_2, \ldots$ eine Folge von uiv. Zufallsvariablen. Sei $\E(|X_1|)<\infty$ und $\mu = \E(X_1)$. Für
+\subsection{Law of Large Numbers}
+\begin{mainbox}{starkes Law of Large Numbers}
+    Sei $X_1, X_2, \ldots$ eine Folge von uiv. Random Variables. Sei $\E(|X_1|)<\infty$ und $\mu = \E(X_1)$. Für
     $$\overline{X}_n = \frac{1}{n}S_n = \frac{1}{n}\sum_{i = 1}^{n}X_i$$
     gilt dann
-    $$\overline{X}_n \longrightarrow \mu \textbf{ f.s.}$$
+    $$\overline{X}_n \longrightarrow \mu \textbf{ a.s.}$$
 \end{mainbox}
-Dies ist eine fast-sichere Konvergenz.
-\begin{mainbox}{schwaches Gesetz der grossen Zahlen}
-    Sei $X_1, X_2, ...$ eine Folge von paarweise unkorrelierten Zufallsvariablen, die alle den gleichen Erwartungswert $\E(X_i) = \mu$ und die gleiche Varianz $\text{Var}(X_i) = \sigma^2$ haben.
+Dies ist eine a.s.-sichere Konvergenz.
+\begin{mainbox}{schwaches Law of Large Numbers}
+    Sei $X_1, X_2, ...$ eine Folge von paarweise unkorrelierten Random Variables, die alle den gleichen Expected Value $\E(X_i) = \mu$ und die gleiche Variance $\text{Var}(X_i) = \sigma^2$ haben.
     Sei 
     $$\overline{X}_n = \frac{1}{n}S_n = \frac{1}{n}\sum_{i = 1}^{n}X_i$$
     Dann konvergiert $\overline{X}_n$ für $n \to \infty$ in Wahrscheinlichkeit gegen $\mu = \E(X_i)$, d.h.
@@ -73,11 +73,11 @@ Dies ist eine fast-sichere Konvergenz.
 Zur Erinnerung: 
 $$X_i, X_j \text{ unkorreliert} \iff \text{ Cov}(X_i, X_j) = 0$$
 Wir haben auch 
-$$X_i, X_j \text{ unabhängig} \implies X_i, X_j \text{ unkorreliert}$$
+$$X_i, X_j \text{ independent} \implies X_i, X_j \text{ unkorreliert}$$
 
-\subsection{Zentraler Grenzwertsatz}
-\begin{mainbox}{Zentraler Grenzwertsatz}
-    Sei $(X_n)_{n\in \N}$ eine Folge von iid. Zufallsvariablen mit $\E(X_i) = \mu < \infty$ und Var$(X_i) = \sigma^2 < \infty$.
+\subsection{Central Limit Theorem (CLT)}
+\begin{mainbox}{Central Limit Theorem (CLT)}
+    Sei $(X_n)_{n\in \N}$ eine Folge von iid. Random Variables mit $\E(X_i) = \mu < \infty$ und Var$(X_i) = \sigma^2 < \infty$.
     Dann gilt 
     $$\limn \P\left(\frac{S_n - n \mu}{\sigma \sqrt{n}} \leq x\right) = \Phi(x) \quad \forall x \in \R$$
     also
@@ -91,7 +91,7 @@ beziehungsweise
 $$S_n \overset{d}{\longrightarrow} \mathcal{N}(n\mu, n \sigma^2) \text{ und } \overline{X}_n \overset{d}{\longrightarrow} \mathcal{N}\left(\mu, \frac{1}{n}\sigma^2\right)$$
 \subsubsection*{Beispielrechnung}
 
-Seien $(X_i)_{i \geq 1}, (Y_i)_{i \geq 1}$ und $(Z_i)_{i \geq 1}$ Folgen von iid. ZV mit
+Seien $(X_i)_{i \geq 1}, (Y_i)_{i \geq 1}$ und $(Z_i)_{i \geq 1}$ Folgen von iid. RV mit
 $$\P(X_1 = 1) = \P(X_1 = -1) = \frac{1}{2}$$
 und analog für $Y_1$ und $Z_1$. Wir definieren
 $$S_n^{(x)} := \sum_{i=1}^n X_i, \quad S_n^{(y)} := \sum_{i=1}^n Y_i, \quad S_n^{(z)} := \sum_{i=1}^n Z_i$$

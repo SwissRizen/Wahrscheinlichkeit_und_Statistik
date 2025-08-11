@@ -1,12 +1,12 @@
-\section{Mehrere Zufallsvariablen}
+\section{Joint Random Variables}
 \begin{mainbox}{}
-    Die \textbf{gemeinsame Verteilungsfunktion} von $n$ Zufallsvariablen $X_1, \ldots, X_n$ (stetig oder diskret) ist die Abbildung $F: \R^n \to [0,1]$,
+    Die \textbf{Joint Cum. Distribution Function} von $n$ Random Variables $X_1, \ldots, X_n$ (continuous oder discrete) ist die Abbildung $F: \R^n \to [0,1]$,
     $$(x_1, \ldots, x_n) \mapsto F(x_1, \ldots, x_n) := \P(X_1 \leq x_1, \ldots, X_n \leq x_n)$$
 \end{mainbox}
-\subsection{Diskreter Fall - Gewichtsfunktion}
-    Für $n$ diskrete ZV $X_1, \ldots, X_n$ definieren wir ihre \textbf{gemeinsame Gewichtsfunktion} $p: \R^n \to [0,1]$ durch
+\subsection{Discreteer Fall - Gewichtsfunktion}
+    Für $n$ discretee RV $X_1, \ldots, X_n$ definieren wir ihre \textbf{Joint Gewichtsfunktion} $p: \R^n \to [0,1]$ durch
     $$p(x_1, \ldots, x_n) := \P(X_1 = x_1, \ldots, X_n = x_n)$$
-    Aus der gemeinsamen Gewichtsfunktion $p$ bekommt man die gemeinsame Verteilungsfunktion mit
+    Aus der Jointn Gewichtsfunktion $p$ bekommt man die Joint Cum. Distribution Function mit
     \begin{align*}
         F(x_1, \ldots, x_n) &= \P(X_1 \leq x_1, \ldots, X_n \leq x_n)\\
         &= \sum_{y_1 \leq x_1, \ldots, y_n \leq x_n}\P(X_1 = y_1, \ldots, X_n = y_n)\\
@@ -14,32 +14,32 @@
     \end{align*}    
 
 \begin{subbox}{}
-    Seien $X_1, \ldots, X_n$ \tbf{diskrete} Zufallsvariablen in $(\Omega, \F, \P)$, sodass $X_1 \in W_1, \ldots, X_n \in W_n$ f.s. für $W_1, \ldots, W_n \subset \R$ endlich oder abzählbar.
+    Seien $X_1, \ldots, X_n$ \tbf{discretee} Random Variables in $(\Omega, \F, \P)$, sodass $X_1 \in W_1, \ldots, X_n \in W_n$ a.s. für $W_1, \ldots, W_n \subset \R$ finite oder countable.
 
-    Für $\phi: \R^n \to \R$ beliebig, ist $Z = \phi(X_1, \ldots, X_n)$ eine diskrete Zufallsvariable mit $Z \in W = \phi(W_1 \times \ldots \times W_n)$ f.s. . 
+    Für $\phi: \R^n \to \R$ beliebig, ist $Z = \phi(X_1, \ldots, X_n)$ eine discretee Random Variable mit $Z \in W = \phi(W_1 \times \ldots \times W_n)$ a.s. . 
 
     Die Gewichtsfunktion von $Z$ ist gegeben durch $p_Z: W \to [0,1]$:
     $$p_Z(t) := \P(Z = t) = \sum_{\substack{x_1 \in W_1, \ldots, x_n \in W_n\\ \phi(x_1, \ldots, x_n) = t}} p(x_1, \ldots, x_n)$$
 \end{subbox}
 \begin{enumerate}
-    \item Mit dem vorherigen Satz können wir aus der gemeinsamen Verteilung die \textbf{Randverteilung} einer Zufallsvariablen extrahieren (wegsummieren). Wir verwenden dafür einfach die Funktion 
+    \item Mit dem vorherigen Satz können wir aus der Jointn Distribution die \textbf{Marginal Distribution} einer Random Variables extrahieren (wegsummieren). Wir verwenden dafür einfach die Funktion 
     $$\phi(x_1, \ldots, x_n) = x_i$$
-    \item Der Erwartungswert des Bildes der Funktion $\phi: \R^n \to \R$ ist
+    \item Der Expected Value des Bildes der Funktion $\phi: \R^n \to \R$ ist
     $$\E(\phi(X_1, \ldots, X_n)) = \sum_{x_1, \ldots, x_n}\phi(x_1, \ldots, x_n)p(x_1, \ldots, x_n)$$
     \item Wir haben eine Äquvalenz: 
     \begin{align*}
-        &X_1, \ldots, X_n \text{unabhängig}\\
+        &X_1, \ldots, X_n \text{independent}\\
         &\quad \iff \\
         &\forall x_1 \in W_1, \ldots, x_n \in W_n\\
         &p(x_1, \ldots, x_n) = \P(X_1 = x_1) \cdot \ldots \cdot \P(X_n = x_n)
     \end{align*}
 \end{enumerate}
 
-\subsection{Stetiger Fall - Gemeinsame Dichte}
-\begin{mainbox}{Gemeinsame Dichte}
-    Falls die gemeinsame Verteilungsfunktion von $n$ Zufallsvariablen $X_1, \ldots, X_n$ sich schreiben lässt als
+\subsection{Continuousr Fall - Gemeinsame Density}
+\begin{mainbox}{Gemeinsame Density}
+    Falls die Joint Cum. Distribution Function von $n$ Random Variables $X_1, \ldots, X_n$ sich schreiben lässt als
     $$F(x_1, \ldots, x_n) = \int_{-\infty}^{x_1} \cdots \int_{-\infty}^{x_n}f(t_1, \ldots, t_n) \mathop{dt_n}\ldots\mathop{dt_1}$$
-    für eine Funktion $f: \R^n \to [0, \infty)$, so heisst $f(x_1, \ldots, x_n)$ die \textbf{gemeinsame Dichte} von $X_1, \ldots X_n$.
+    für eine Funktion $f: \R^n \to [0, \infty)$, so heisst $f(x_1, \ldots, x_n)$ die \textbf{Joint Density} von $X_1, \ldots X_n$.
 \end{mainbox}
    
 \begin{enumerate}
@@ -49,32 +49,32 @@
         \P((X_1, \ldots, X_n) \in A) = \idotsint\limits_{(x_1, \ldots, x_n) \in A} f(x_1, \ldots, x_n) \mathop{dx_n}\ldots\mathop{dx_1}
     \end{gather*}
     für $A \subseteq \R^n$ beliebig.
-    \item Haben $X, Y$ die gemeinsame Verteilungsfunktion $F_{X,Y}$, so ist $F_X: \R \to [0,1]$,
+    \item Haben $X, Y$ die Joint Cum. Distribution Function $F_{X,Y}$, so ist $F_X: \R \to [0,1]$,
     $$F_X(x) := \P(X \leq x) = \P(X \leq x, Y \leq \infty) = \lim_{y \to \infty}F_{X,Y}(x,y)$$
-    die Verteilungsfunktion der \textit{Randverteilung} von $X$. Analoges gilt für $F_Y$.
-    \item Falls $X,Y$ eine gemeinsame Dichte $f(x,y)$ haben, so haben auch die Randverteilungen von $X$ und $Y$ Dichten $f_X: \R \to [0, \infty)$ und $F_Y: \R \to [0, \infty)$.
+    die Cum. Distribution Function der \textit{Marginal Distribution} von $X$. Analoges gilt für $F_Y$.
+    \item Falls $X,Y$ eine Joint Density $f(x,y)$ haben, so haben auch die Marginal Distributionen von $X$ und $Y$ Densityn $f_X: \R \to [0, \infty)$ und $F_Y: \R \to [0, \infty)$.
     $$f_X(x) = \int_{-\infty}^{\infty}f(x,y)\mathop{dy} \text{ bzw. } f_Y(y)=\int_{-\infty}^{\infty}f(x,y)\dx$$
-    Die \textbf{Dichtefunktion} einer Randverteilung (Randdichte) entsteht aus der gemeinsamen Dichtefunktion durch ''Wegintegrieren'' der anderen Variable(n).
+    Die \textbf{Densityfunktion} einer Marginal Distribution (Marginal Density) entsteht aus der Jointn Densityfunktion durch ''Wegintegrieren'' der anderen Variable(n).
 \end{enumerate}
-Wenn $X_1, \ldots, X_n$ stetige ZV mit Dichten $f_1, \ldots, f_n$, dann sind die folgenden Aussagen äquivalent:
+Wenn $X_1, \ldots, X_n$ continuouse RV mit Densityn $f_1, \ldots, f_n$, dann sind die folgenden Aussagen äquivalent:
 \begin{itemize}
-    \item $X_1, \ldots, X_n$ unabhängig
-    \item $(X_1, \ldots, X_n)$ ist stetig mit gemeinsamer Dichte $$f(x_1, \ldots, x_n) = f_1(x_1) \cdot \ldots \cdot f_n(x_n)$$
-    \item Für alle $\phi_1: \R \to \R, \ldots, \phi_n: \R \to \R$ die stückweise stetig und beschränkt sind, gilt 
+    \item $X_1, \ldots, X_n$ independent
+    \item $(X_1, \ldots, X_n)$ ist continuous mit Jointr Density $$f(x_1, \ldots, x_n) = f_1(x_1) \cdot \ldots \cdot f_n(x_n)$$
+    \item Für alle $\phi_1: \R \to \R, \ldots, \phi_n: \R \to \R$ die stückweise continuous und bounded sind, gilt 
     $$\E(\phi_1(X_1)\cdot \ldots \cdot \phi_n(X_n)) = \E(\phi_1(X_1)) \cdot \ldots \cdot \E(\phi_n(X_n))$$
 \end{itemize}
-\subsection{Transformation von Zufallsvariablen}
+\subsection{Transformation von Random Variables}
 \begin{subbox}{linearer Transformationssatz}
     Sei $Z$ ein $n$-dimensionaler Zufallsvektor und $g: (\R^n, \mathcal{B}^n) \to (\R^m, \mathcal{B}^m)$ eine messbare Abbildung. Dann ist
     $$H(\omega) = g(Z(\omega))$$
-    ein $m$-dimensionaler Zufallsvariable und ferner gilt
+    ein $m$-dimensionaler Random Variable und ferner gilt
     $$\P(H \in A) = \P(Z \in g^{-1}(A)).$$
-    Wenn $g$ linear und umkehrbar (i.e. $g(x) = m + Bx$ mit det$(B) \neq 0$) und unter Vorraussetzung, dass die Verteilung von $Z$ absolut stetig ist, dann ist $H$ auch absolut stetig und es gilt:
+    Wenn $g$ linear und umkehrbar (i.e. $g(x) = m + Bx$ mit det$(B) \neq 0$) und unter Vorraussetzung, dass die Distribution von $Z$ absolut continuous ist, dann ist $H$ auch absolut continuous und es gilt:
     $$f_H(x)=\frac{1}{|\text{det}(B)|}f_Z(B^{-1}(x-m)).$$
 \end{subbox}
 \subsubsection*{Beispielrechnung}
 
-$Z = (X, Y)$ $2$-dim Zufallsvektor. Wir wollen die Dichte von $X + Y$ berechnen.
+$Z = (X, Y)$ $2$-dim Zufallsvektor. Wir wollen die Density von $X + Y$ berechnen.
 
 Man wäre versucht die Matrix $B$ und den Vektor $m$ wie folgt zu definieren:
 \begin{align*}
@@ -133,26 +133,26 @@ Nach dem linearen Transformationssatz gilt
     \end{matrix}\right)\right)\\
     &= f_{X, Y}\left(x, z-x\right)
 \end{align*}
-Aus der gemeinsamen Dichte $f_{X, X + Y}$ können wir die Dichte $f_{X + Y}$ bestimmen.
+Aus der Jointn Density $f_{X, X + Y}$ können wir die Density $f_{X + Y}$ bestimmen.
 \begin{align*}
     f_{X+Y}(z) &= \int_{-\infty}^{\infty}f_{X, X + Y}(x, z) \dx\\
     &= \int_{-\infty}^{\infty} f_{X,Y}(x, z-x) \dx\\
-    \text{Falls $X$ und $Y$ unabhängig}\\
+    \text{Falls $X$ und $Y$ independent}\\
     &= \int_{-\infty}^{\infty}f_X(x)\cdot f_Y(z-x) \dx
 \end{align*}
-\subsubsection{Charakterisierung der Dichte durch \(\mathbb{E}\)}
-    Sei $\phi: \R^n \to \R$ eine Abbildung und $X_1, \ldots, X_n$ ZV mit gemeinsamer Dichte $f$. 
-    Dann lässt sich $\E(Z)$ für die Zufallsvariable $Z=\phi(X_1, \ldots, X_n)$ mit 
+\subsubsection{Charakterisierung der Density durch \(\mathbb{E}\)}
+    Sei $\phi: \R^n \to \R$ eine Abbildung und $X_1, \ldots, X_n$ RV mit Jointr Density $f$. 
+    Dann lässt sich $\E(Z)$ für die Random Variable $Z=\phi(X_1, \ldots, X_n)$ mit 
     $$\E(Z) =\idotsint\limits_{\R^n}\phi(x_1, \ldots, x_n)\cdot f(x_1, \ldots, x_n)\mathop{dx_n}\ldots\mathop{dx_1}$$
     berechnen.
 
-Dies reicht aber nicht, um die Dichte einer transformierten ZV zu berechnen. Mehrere Zufallsvariablen mit unterschiedlichen Dichten können den gleichen Erwartungswert haben.
+Dies reicht aber nicht, um die Density einer transformierten RV zu berechnen. Joint Random Variables mit unterschiedlichen Densityn können den gleichen Expected Value haben.
 
 \begin{subbox}{}
-    Sei $f: \R \to \R_+$ eine Abblidung, sodass $\int_{-\infty}^{\infty}f(z)\mathop{dz} = 1$. Dann sind folgende Aussagen äquivalent
+    Sei $f: \R \to \R_+$ eine Abbildung, sodass $\int_{-\infty}^{\infty}f(z)\mathop{dz} = 1$. Dann sind folgende Aussagen äquivalent
     \begin{itemize}
-        \item $Z$ ist stetig mit Dichte $f$
-        \item Für jede stückweise stetige, beschränkte Abbildung $\psi: \R \to \R$ gilt 
+        \item $Z$ ist continuous mit Density $f$
+        \item Für jede stückweise continuouse, boundede Abbildung $\psi: \R \to \R$ gilt 
         \[\E(\psi(Z)) = \int_{-\infty}^{\infty}\psi(z)f(z)\mathop{dz}\]
     \end{itemize}
 \end{subbox}
@@ -160,16 +160,16 @@ Dies reicht aber nicht, um die Dichte einer transformierten ZV zu berechnen. Meh
 
 \subsubsection*{Beispielrechnung}
 
-Wir können diese Erkenntnis nutzen, um die Dichte einer transformierten Zufallsvariable zu berechnen.
+Wir können diese Erkenntnis nutzen, um die Density einer transformierten Random Variable zu berechnen.
 
-Seien $X$ und $Y$ zwei Zufallsvariablen mit gemeinsamer Dichtefunktion
+Seien $X$ und $Y$ zwei Random Variables mit Jointr Densityfunktion
 $$f(x,y) = \begin{cases}
     \frac{1}{x^2y^2} & \text{ für } x \geq 1, y \geq 1\\
     0 & \text{ sonst.}
 \end{cases}$$
-Bestimme die Dichtefunktion $f_V$ der Zufallsvariable $V = XY$.
+Bestimme die Densityfunktion $f_V$ der Random Variable $V = XY$.
 
-Sei $\psi: \R \to \R$ stückweise stetig und beschränkt.
+Sei $\psi: \R \to \R$ stückweise continuous und bounded.
 Wir definieren $\phi(x, y) = \psi(xy) = \psi(v)$ und berechnen 
 \begin{align*}
     \E(\psi(V)) = \E(\phi(X,Y)) &= \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\phi(x,y)f(x,y)\dx\mathop{dy}\\
@@ -186,7 +186,7 @@ Wir definieren $\phi(x, y) = \psi(xy) = \psi(v)$ und berechnen
 $$\implies f_V(t) = \frac{\ln(v)}{v^2}\mathds{1}_{v \in [1,\infty)}$$
 
 \begin{mainbox}{genereller Transformationssatz}
-    Sei $Z$ ein $n$-dimensionaler Zufallsvektor mit Dichtefunktion $f_Z: \R^n \to \R_+$ und $\phi: \R^n \to \R^n$ stetig differenzierbar mit stetig differenzierbarer Umkehrabbildung $\phi^{-1}$. Dann gilt für die Dichte $f_U$ von $U = \phi(Z)$:
+    Sei $Z$ ein $n$-dimensionaler Zufallsvektor mit Densityfunktion $f_Z: \R^n \to \R_+$ und $\phi: \R^n \to \R^n$ continuous differenzierbar mit continuous differenzierbarer Umkehrabbildung $\phi^{-1}$. Dann gilt für die Density $f_U$ von $U = \phi(Z)$:
     \[f_U(\vec{u}) = f_Z\left(\phi^{-1}\left(\vec{u}\right)\right) \cdot |\text{det}(J_{\phi^{-1}}(\vec{u}))|\]
 \end{mainbox}
 \textbf{Beweisidee.} Für $A \subset \R^n$ gilt
@@ -195,7 +195,7 @@ Aus der mehrdimensionalen Integralrechnung folgt dann
 \[\int_{\phi^{-1}(A)}f_Z(\vec{z})\mathop{d\vec{z}} = \int_{A}f_Z\left(\phi^{-1}\left(\vec{u}\right)\right) \cdot |\text{det}(J_{\phi^{-1}}(\vec{u}))|\mathop{d\vec{u}}\]
 $\hfill\blacksquare$
 \subsubsection*{Beispielrechnung}
-Wir haben $Z = (X, Y)$, wobei $X, Y$ unabhängig und exponentialverteilt mit $\lambda > 0$. Berechne die Dichtefunktion $f_U$ von $$U:= \frac{X}{X+Y}$$
+Wir haben $Z = (X, Y)$, wobei $X, Y$ independent und exponentialverteilt mit $\lambda > 0$. Berechne die Densityfunktion $f_U$ von $$U:= \frac{X}{X+Y}$$
 Wir definieren $\phi$, so dass $(U, Y) = \phi(X, Y)$.
 \[\phi(x, y) = \left(\begin{matrix}
     \frac{x}{x+y}\\

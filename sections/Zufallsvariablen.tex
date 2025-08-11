@@ -1,30 +1,30 @@
-\section{Zufallsvariablen}
-Sei ($\Omega, \A, \P$) ein Wahrscheinlichkeitsraum.
-\begin{mainbox}{Zufallsvariable}
-    Eine (reellwertige) \textbf{Zufallsvariable} auf $\Omega$ ist eine messbare Funktion $X: \Omega \to \R$.
+\section{Random Variables}
+Sei ($\Omega, \A, \P$) ein Probability Space.
+\begin{mainbox}{Random Variable}
+    Eine (reellwertige) \textbf{Random Variable} auf $\Omega$ ist eine messbare Funktion $X: \Omega \to \R$.
     $$X: \Omega \to \R \textbf{ messbar} \iff \forall B \subset \R \text { closed. } X^{-1}(B) \in \A$$
  
-    Die Eigenschaft \textbf{messbar} ist bezüglich dem Wahrscheinlichkeitsmass $\P: \A \to [0,1]$ relevant. Dann ist $\P(X \in B) := \P(\{\omega \in \Omega \mid X(\omega) \in B\})$ wohldefiniert.
+    Die Eigenschaft \textbf{messbar} ist bezüglich dem Wahrscheinlichkeitsmass $\P: \A \to [0,1]$ relevant. Dann ist $\P(X \in B) := \P(\{\omega \in \Omega \mid X(\omega) \in B\})$ well-defined.
 \end{mainbox}
-Bei diskretem $\Omega$, können wir die rechte Seite vom '$\iff$' durch $\forall x \in \R: X^{-1}(\{x\})\in \A \ (1)$ ersetzen. 
+Bei discreteem $\Omega$, können wir die rechte Seite vom '$\iff$' durch $\forall x \in \R: X^{-1}(\{x\})\in \A \ (1)$ ersetzen. 
 
-Für die Messbarkeit von $X$ ist nur $X(\Omega) \subseteq \R$ entscheidend und jede Teilmenge $A \subseteq X(\Omega)$ ist abzählbar (da $\Omega$ abzählbar). Somit kann $X^{-1}(A)$ als abzählbare Vereinigung von $\bigcup_{x \in A} X^{-1}(\{x\})$ geschrieben werden. 
+Für die Messbarkeit von $X$ ist nur $X(\Omega) \subseteq \R$ entscheidend und jede Teilmenge $A \subseteq X(\Omega)$ ist countable (da $\Omega$ countable). Somit kann $X^{-1}(A)$ als countablee Vereinigung von $\bigcup_{x \in A} X^{-1}(\{x\})$ geschrieben werden. 
 \\$(1) \implies X^{-1}(A) \in \A$ per Def. $\sigma$-Algebra
-\subsection{Verteilungsfunktion}
-Die \textbf{Verteilungsfunktion} ist die Abbildung $F_X : \R \to [0,1]$ definiert durch:
+\subsection{Cum. Distribution Function}
+Die \textbf{Cum. Distribution Function} ist die Abbildung $F_X : \R \to [0,1]$ definiert durch:
 $$F_X(t) := \P(X \leq t), \forall t \in \R$$
 
 Die Funktion erfüllt folgende Eigenschaften:
 \begin{enumerate}
     \item $F_X$ ist monoton wachsend 
-    \item $F_X$ ist rechtsstetig, i.e. $\lim_{h \downarrow 0}F_X(x+h) = F_X(x)$
+    \item $F_X$ ist rechtscontinuous, i.e. $\lim_{h \downarrow 0}F_X(x+h) = F_X(x)$
     \item $\lim_{x \to -\infty}F_X(x) = 0$ und $\lim_{x \to \infty}F_X(x) = 1$
     \item $\forall a,b \in \R, a < b: \P(a < X \leq b) = F_X(b) -F_X(a)$ 
 \end{enumerate}
 
-\textbf{Linksstetigkeit}
+\textbf{Left-continuouskeit}
 
-Die Verteilungsfunktion ist nicht immer linksstetig.
+Die Cum. Distribution Function ist nicht immer left-continuous.
 \\Sei $F_X(a-) := \lim_{h \downarrow 0}F_X(a-h)$ für $a \in \R$ beliebig.
 
 Dann gilt:
@@ -32,104 +32,104 @@ $$\P(X = a) = F_X(a) - F_X(a-)$$
 
 Intuitiv folgt daraus
 \begin{itemize}
-    \item Wenn $F_X$ in einem Punkt $a \in \R$ nicht stetig ist, dann ist die ''Sprunghöhe'' $F_X(a)-F_X(a-)$ gleich der Wahrscheinlichkeit $\P(X = a)$.
-    \item Falls $F_X$ stetig in einem Punkt $a \in \R$, dann gilt $\P(X = a) = 0$. 
+    \item Wenn $F_X$ in einem Punkt $a \in \R$ nicht continuous ist, dann ist die ''Sprunghöhe'' $F_X(a)-F_X(a-)$ gleich der Wahrscheinlichkeit $\P(X = a)$.
+    \item Falls $F_X$ continuous in einem Punkt $a \in \R$, dann gilt $\P(X = a) = 0$. 
 \end{itemize}
 
 \begin{mainbox}{}
-    Seien $X_1, ...,X_n$ Zufallsvariablen auf einem Wahrscheinlichkeitsraum $(\Omega, \A, \P)$. Dann heissen $X_1, ...,X_n$ \textbf{unabhängig}, falls
+    Seien $X_1, ...,X_n$ Random Variables auf einem Probability Space $(\Omega, \A, \P)$. Dann heissen $X_1, ...,X_n$ \textbf{independent}, falls
     \begin{align*}
         &\forall x_1, ..., x_n \in \R:\\
         &\P(X_1 \leq x_1, ..., X_n \leq x_n) = \P(X_1 \leq x_1)\cdot ... \cdot \P(X_n \leq x_n).
     \end{align*} 
 \end{mainbox}
 
-% \begin{subbox}{Unendlich viele Bernoulli-Experimente}
+% \begin{subbox}{Unfinite viele Bernoulli-Experimente}
 %     TBD
 % \end{subbox}
 
-\subsection{Diskrete Zufallsvariablen}
-Sei $A \in \F$ ein Ereignis.\\
-Wir sagen $A$ tritt \textbf{fast sicher (f.s.)} ein, falls $\P(A)= 1$.
+\subsection{Discretee Random Variables}
+Sei $A \in \F$ ein Event.\\
+Wir sagen $A$ tritt \textbf{almost surely (a.s.)} ein, falls $\P(A)= 1$.
 \\ \\
-Seien $X, Y: \Omega \to \R$ Zufallsvariablen: \\$X \leq Y$ f.s. $\iff$ $\P(X \leq Y)=1$
+Seien $X, Y: \Omega \to \R$ Random Variables: \\$X \leq Y$ a.s. $\iff$ $\P(X \leq Y)=1$
 
 
 \begin{mainbox}{}
-    Eine Zufallsvariable $X: \Omega \to \R$ heisst \textbf{diskret}, falls eine endliche oder abzählbare Menge $W \subset \R$ existiert, sodass
+    Eine Random Variable $X: \Omega \to \R$ heisst \textbf{discrete}, falls eine finitee oder countablee Menge $W \subset \R$ existiert, sodass
     $$\P(X \in W) = 1$$
-    Falls $\Omega$ endlich oder abzählbar ist, dann ist $X$ immer diskret.
+    Falls $\Omega$ finite oder countable ist, dann ist $X$ immer discrete.
 \end{mainbox}
-Die \textbf{Verteilungsfunktion} einer diskreten ZV $X$: $$F_X(x)= \P(X \leq x)= \sum_{y\in W}p(y)\cdot \mathds{1}_{y\leq x}$$
-Die \textbf{Gewichtsfunktion} einer diskreten ZV $X$: $$\forall x \in X(\Omega): p(x)= \P(X=x) \text{ wobei} \sum_{x \in X(\Omega)}p(x)= 1$$
+Die \textbf{Cum. Distribution Function} einer discreteen RV $X$: $$F_X(x)= \P(X \leq x)= \sum_{y\in W}p(y)\cdot \mathds{1}_{y\leq x}$$
+Die \textbf{Gewichtsfunktion} einer discreteen RV $X$: $$\forall x \in X(\Omega): p(x)= \P(X=x) \text{ wobei} \sum_{x \in X(\Omega)}p(x)= 1$$
 
-\subsection{Diskrete Verteilungen}
-\textbf{Bernoulli-Verteilung} ($X \sim \text{Ber}(p)$): 
+\subsection{Discretee Distribution}
+\textbf{Bernoulli-Distribution} ($X \sim \text{Ber}(p)$): 
 
 $X(\Omega)= \{0, 1\}$ und die Gewichtsfunktion ist definiert durch
 $$p(1):= \P(X = 1) = p \text{ und } p(0):=\P(X = 0) = 1 - p.$$
 \textbf{Binomialverteilung} ($X \sim \text{Bin}(n, p)$): 
 
-Wiederholung von $n$ unabhängigen Bernoulli-Experimenten mit gleichem Parameter $p$. 
+Wiederholung von $n$ independenten Bernoulli-Experimenten mit gleichem Parameter $p$. 
 $$p(k):= \P(X = k) = \binom{n}{k} \cdot p^k \cdot (1-p)^{n-k} \quad \forall k \in \{0,1,\ldots, n\}$$
-\textbf{Geometrische Verteilung} ($X \sim \text{Geo}(p)$): 
+\textbf{Geometrice Distribution} ($X \sim \text{Geo}(p)$): 
 
 Warten auf den $1$-ten Erfolg. 
 $$p(k):= \P(X = k) = (1-p)^{k-1}\cdot p \quad \forall k \in \N\setminus\{0\}$$
-\textbf{Poisson-Verteilung} ($X \sim \text{Poisson}(\lambda)$): 
+\textbf{Poisson-Distribution} ($X \sim \text{Poisson}(\lambda)$): 
 
 Grenzwert der Binomialverteilung für grosse $n$ und kleine $p$. 
 $$p(k) := \P(X = k) = \frac{\lambda^k}{k!}\cdot e^{-\lambda} \quad \forall k \in \N_0, \lambda > 0$$
 \begin{enumerate}
     \item Für $X_n \sim \text{Bin}(n, \frac{\lambda}{n})$ gilt $\lim_{n \to \infty}\P(X_n = k) = \P(Y = k)$ wobei $Y \sim \text{Poisson}(\lambda)$.
-    \item Seien $X_1 \sim \text{Poisson}(\lambda_1)$ und $X_2 \sim \text{Poisson}(\lambda_2)$ unabhängig. Dann gilt $(X_1 + X_2) \sim \text{Poisson}(\lambda_1 +\lambda_2)$.
+    \item Seien $X_1 \sim \text{Poisson}(\lambda_1)$ und $X_2 \sim \text{Poisson}(\lambda_2)$ independent. Dann gilt $(X_1 + X_2) \sim \text{Poisson}(\lambda_1 +\lambda_2)$.
 \end{enumerate}
 
-\subsection{Stetige Zufallsvariablen}
+\subsection{Continuous Random Variables}
 \begin{mainbox}{}
-    Eine Zufallsvariable $X: \Omega \to \R$ heisst \textbf{stetig}, wenn ihre Verteilungsfunktion $F_X$ wie folgt geschrieben werden kann
+    Eine Random Variable $X: \Omega \to \R$ heisst \textbf{continuous}, wenn ihre Cum. Distribution Function $F_X$ wie folgt geschrieben werden kann
     $$F_X(a) = \int_{-\infty}^{a}f(x)\dx \text{ für alle }a \in \R.$$
-    wobei $f: \R \to \R^+$ eine nicht-negative Funktion ist. $f$ wird dann als \textbf{Dichte} von $X$ benannt.\\
-    Wenn $f: (\R, \mathcal{B}) \to (\R, \mathcal{B})$ messbar ist, ist die Zufallsvariable $X$ \textbf{absolut stetig}.
+    wobei $f: \R \to \R^+$ eine nicht-negative Funktion ist. $f$ wird dann als \textbf{Density} von $X$ benannt.\\
+    Wenn $f: (\R, \mathcal{B}) \to (\R, \mathcal{B})$ messbar ist, ist die Random Variable $X$ \textbf{absolut continuous}.
 \end{mainbox}
 \textbf{Intuition:} $f(x)\dx$ ist die Wahrscheinlichkeit, dass $X \in [x, x + \dx]$.
 \\ \\
 \textbf{Von $F_X$ zu $f$:} 
 
-Sei $X$ eine Zufallsvariable mit stetiger Verteilungsfunktion $F_X$ und $F_X$ stückweise $\mathcal{C}^1$, d.h. es gibt $x_0 = - \infty < \ldots < x_{n-1} < x_n = +\infty$, sodass $F_X$ auf jedem Intervall $(x_i, x_{i+1})$ Element von $\mathcal{C}^1$ ist. 
+Sei $X$ eine Random Variable mit continuouser Cum. Distribution Function $F_X$ und $F_X$ stückweise $\mathcal{C}^1$, d.h. es gibt $x_0 = - \infty < \ldots < x_{n-1} < x_n = +\infty$, sodass $F_X$ auf jedem Intervall $(x_i, x_{i+1})$ Element von $\mathcal{C}^1$ ist. 
 
-Dann ist $X$ eine stetige Zufallsvariable und die Dichte $f$ kann wie folgt konstruiert werden:
+Dann ist $X$ eine continuouse Random Variable und die Density $f$ kann wie folgt konstruiert werden:
 $$\forall x \in (x_i, x_{i+1}) \quad f(x) = F'_X(x).$$
 
-\subsubsection*{Bedingte Dichte}
-Seien $X,Y$ ZV auf $(\Omega, \A, \P)$ mit gemeinsamer Dichte $f_{X,Y}(x, y)$ und Randdichte $f_{Y}(y) \neq 0$.
-Dann ist die bedingte Dichte von $X$ bedingt durch $Y$:
+\subsubsection*{Conditional Density}
+Seien $X,Y$ RV auf $(\Omega, \A, \P)$ mit Jointr Density $f_{X,Y}(x, y)$ und Marginal Density $f_{Y}(y) \neq 0$.
+Dann ist die bedingte Density von $X$ bedingt durch $Y$:
 $$f_{X | Y}(x|y) = \frac{f_{X,Y}(x,y)}{f_Y(y)}$$
 
-\subsection{Stetige Verteilungen}
-\textbf{Gleichverteilung} ($X \sim \mathcal{U}([a,b])$): 
+\subsection{Continuous Distribution}
+\textbf{Uniform Distribution} ($X \sim \mathcal{U}([a,b])$): 
 
-Die Dichte ist auf dem Intervall $[a, b]$ gleich. 
+Die Density ist auf dem Intervall $[a, b]$ gleich. 
 $$f_{a,b}(x) = \begin{cases}
     0 & x \notin [a,b]\\
     \frac{1}{b-a} & x \in [a,b]
 \end{cases}$$
 \textbf{Exponentialverteilung} ($T \sim \text{Exp}(\lambda)$): 
 
-Lebensdauer oder Wartezeit eines allg. Ereignisses (Stetiges Äquivalent zur Geometrischen Verteilung).
+Lebensdauer oder Wartezeit eines allg. Eventses (Continuouss Äquivalent zur Geometricen Distribution).
 $$f_\lambda(x) = \begin{cases}
     \lambda e^{-\lambda x} & x \ge 0,\\
     0 & x < 0.
 \end{cases}$$ 
 \textbf{Normalverteilung} ($X \sim \mathcal{N}(m, \sigma^2)$): 
 
-Häufig verwendete Verteilung. Undefiniert für $\sigma = 0$.
+Häufig verwendete Distribution. Undefiniert für $\sigma = 0$.
 $$f_{m, \sigma}(x) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-m)^2}{2\sigma^2}}$$
 \begin{enumerate}
-    \item Seien $X_1, \ldots, X_n$ \textbf{unabhängige} normalverteilte ZV mit Parametern $(m_1,\sigma_1^2), \ldots, (m_n, \sigma_n^2)$, dann ist 
+    \item Seien $X_1, \ldots, X_n$ \textbf{independente} normally distributed RV mit Parametern $(m_1,\sigma_1^2), \ldots, (m_n, \sigma_n^2)$, dann ist 
     $$Z = m_0 + \lambda_1 X_1 + \ldots + \lambda_n X_n$$
-    eine normalverteilte ZV mit Parametern $m = m_0 + \lambda_1 m_1 + \ldots + \lambda_n m_n$ und $\sigma^2 = \lambda_1^2 \sigma_1^2 + \ldots + \lambda_n^2 \sigma_n^2$.
-    \item Sei $Z \sim \mathcal{N}(0,1)$ eine \textbf{standardnormalverteilte} Zufallsvariable. Dann gilt für $X \sim \mathcal{N}(m, \sigma^2)$ 
+    eine normally distributed RV mit Parametern $m = m_0 + \lambda_1 m_1 + \ldots + \lambda_n m_n$ und $\sigma^2 = \lambda_1^2 \sigma_1^2 + \ldots + \lambda_n^2 \sigma_n^2$.
+    \item Sei $Z \sim \mathcal{N}(0,1)$ eine \textba.s.andardnormally distributed} Random Variable. Dann gilt für $X \sim \mathcal{N}(m, \sigma^2)$ 
     $$X = m + \sigma \cdot Z$$   
 \end{enumerate}
 

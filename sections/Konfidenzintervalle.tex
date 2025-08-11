@@ -1,12 +1,12 @@
-\section{Konfidenzintervalle}
-\begin{mainbox}{Definition Konfidenzintervall}
-	Sei \(\alpha \in [0,1]\). Ein Konfidenzintervall für \(\theta\) mit Niveau \(1 - \alpha\) ist ein Zufallsintervall \(I(\omega)=[A(\omega),B(\omega)]\), sodass gilt
+\section{Confidence Intervals}
+\begin{mainbox}{Definition Confidence Interval}
+	Sei \(\alpha \in [0,1]\). Ein Confidence Interval für \(\theta\) mit Niveau \(1 - \alpha\) ist ein Zufallsintervall \(I(\omega)=[A(\omega),B(\omega)]\), sodass gilt
 	\[\forall \theta \in \Theta \quad \P_\theta[A\le \theta \le B] \ge 1- \alpha\]
 
-	wobei \(A\) und \(B\) Zufallsvariablen der Form \(A = a(X_1, \ldots, X_n), B = b(X_1, \ldots, X_n)\) mit \(a,b: \R^n \to \R\) sind.
+	wobei \(A\) und \(B\) Random Variables der Form \(A = a(X_1, \ldots, X_n), B = b(X_1, \ldots, X_n)\) mit \(a,b: \R^n \to \R\) sind.
 \end{mainbox}
 
-Wenn wir einen Schätzer \(T = T_{ML} \sim \mathcal{N}\left(\theta, \text{Var}(X)\right)\) haben, suchen wir ein Konfidenzintervall der Form
+Wenn wir einen Estimator \(T = T_{ML} \sim \mathcal{N}\left(\theta, \text{Var}(X)\right)\) haben, suchen wir ein Confidence Interval der Form
 \[I = \left[T-c \sqrt{\Var(X)}, T+c\sqrt{\Var(X)}\right]\]
 Hierbei gilt:
 \begin{align*}
@@ -19,6 +19,6 @@ Hierbei gilt:
 wobei \(Z = \frac{T-\theta}{\sqrt{\Var(X)}} \sim \mathcal{N}(0,1)\) ist.
 
 
-\subsection{Approximatives Konfidenzintervall}
-Wir können den zentralen Grenzwertsatz benutzen, um eine standardnormalverteilte ZV zu erhalten, und damit die Konfidenzintervalle zu bestimmen.
+\subsection{Approximatives Confidence Interval}
+Wir können den zentralen Grenzwertsatz benutzen, um eine standardnormally distributed RV zu erhalten, und damit die Confidence Intervals zu bestimmen.
 

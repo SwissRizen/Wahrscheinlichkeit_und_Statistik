@@ -1,13 +1,13 @@
 \section{Aufgaben}
 \subsection{Multiple Choice}
 
-Seien \(X,Y\) zwei ZV mit gemeinsamer Dichte \(f_{X,Y}\). Welche Aussage ist korrekt?
+Seien \(X,Y\) zwei RV mit Jointr Density \(f_{X,Y}\). Welche Aussage ist korrekt?
 \begin{itemize}
-	\item[\checkmark] \(X,Y\) sind immer stetig
-	\item[\(\square\)] Die ZV sind nicht notwendigerweise stetig.
+	\item[\checkmark] \(X,Y\) sind immer continuous
+	\item[\(\square\)] Die RV sind nicht notwendigerweise continuous.
 \end{itemize}
 
-Sei $Y$ eine stetige Zufallsvariable. Für alle $s, t \in \R^+$:
+Sei $Y$ eine continuouse Random Variable. Für alle $s, t \in \R^+$:
 
 $\exists \lambda > 0. \ Y \sim Exp(\lambda) \iff \P(Y > s) = \P(Y > s + t \mid Y > t)$ 
 \begin{itemize}
@@ -17,7 +17,7 @@ $\exists \lambda > 0. \ Y \sim Exp(\lambda) \iff \P(Y > s) = \P(Y > s + t \mid Y
 
 
 % \noindent
-% Seien \((X_i)_{i = 1}^n\) uiv. mit Verteilungsfunktion \(F_{X_i} = F\). Was ist die Verteilungsfunktion von \(M = \text{max}(X_1,...,X_n)\)?
+% Seien \((X_i)_{i = 1}^n\) uiv. mit Cum. Distribution Function \(F_{X_i} = F\). Was ist die Cum. Distribution Function von \(M = \text{max}(X_1,...,X_n)\)?
 % \begin{itemize}
 % 	\item[\checkmark] \(F_M(a) = F(a)^n\)
 % 	\item[\(\square\)] \(F_M(a) = 1 - F(a)^n\)
@@ -25,7 +25,7 @@ $\exists \lambda > 0. \ Y \sim Exp(\lambda) \iff \P(Y > s) = \P(Y > s + t \mid Y
 % \end{itemize}
 
 % \noindent
-% Seien \(X, Y\) unabhängig und lognormalverteilt (\(\ln X, \ln Y\) sind normalverteilt). Welche Aussage ist korrekt?
+% Seien \(X, Y\) independent und lognormalverteilt (\(\ln X, \ln Y\) sind normalverteilt). Welche Aussage ist korrekt?
 % \begin{itemize}
 % 	\item[\checkmark] \(XY\) ist lognormalverteilt
 % 	\item[\(\square\)] \(XY\) ist normalverteilt
@@ -33,9 +33,9 @@ $\exists \lambda > 0. \ Y \sim Exp(\lambda) \iff \P(Y > s) = \P(Y > s + t \mid Y
 % \end{itemize}
 
 \subsection{Aufgaben Wahrscheinlichkeit}
-\subsubsection*{\texorpdfstring{Dichte von \(\max(X_1,X_2)\)}{Dichte von max()}}
+\subsubsection*{\texorpdfstring{Density von \(\max(X_1,X_2)\)}{Density von max()}}
 
-Seien \(X_1, X_2 \sim \mathcal{U}[0,1]\) unabhängige ZV und sei \(X = \max (X_1, X_2)\). Berechne die Dichtefunktion von \(X\) und \(\P[X_1 \leq x \mid X \geq y]\).
+Seien \(X_1, X_2 \sim \mathcal{U}[0,1]\) independente RV und sei \(X = \max (X_1, X_2)\). Berechne die Densityfunktion von \(X\) und \(\P[X_1 \leq x \mid X \geq y]\).
 \begin{align*}
 	F_X(t) & = \P[\max(X_1, X_2) \leq t]                                                                                                              \\ &= \P[X_1 \leq t] \cdot \P[X_2 \leq t] = F_{X_1}(t) \cdot F_{X_2}(t) \\
 	f_X(t) & = \frac{d}{dt} F_{X_1}(t) \cdot F_{X_2}(t) = \frac{d}{dt} t^2 \cdot \mathbb{I}_{0 \leq t \leq 1} = 2t \cdot \mathbb{I}_{0 \leq t \leq 1}
@@ -52,23 +52,23 @@ Für die Wahrscheinlichkeit brauchen wir eine Fallunterscheidung: \smallskip
 	      \[\frac{\mathbb{P}(X_1 < y, X_2 \geq y) + \P(y \leq X_1 \leq x)}{\mathbb{P}(X \geq y)} = \frac{x - y^2}{1 - y^2}\]
 \end{enumerate}
 
-\subsubsection*{Gemeinsame Dichte}
+\subsubsection*{Gemeinsame Density}
 
-Bestimme die gemeinsame Dichte von \(P \sim \mathcal{U}[0,1]\) und \(H \sim \mathcal{U}[0,P]\). Wir wissen:
+Bestimme die Joint Density von \(P \sim \mathcal{U}[0,1]\) und \(H \sim \mathcal{U}[0,P]\). Wir wissen:
 \[f_P(p) = \mathbb I_{p \in [0,1]} \quad f_{H | P}(h \mid p) = \frac{1}{p} \cdot \mathbb{I}_{h \in [0,p]}\]
 
 \noindent
 Somit ist:
 \[f_{P, H} (p, h) = f_P(p) \cdot f_{H | P}(h \mid p) = \frac{1}{p} \cdot \mathbb I_{0 \leq h \leq p \leq 1}\]
 
-\subsubsection*{Maximum und Minimum gleichverteilter ZVen}
-Seien $U_1, U_2, U_3$ unabhängige, $\mathcal{U}([0,1])$-verteilte Zufallsvariablen. 
+\subsubsection*{Maximum und Minimum gleichverteilter RVen}
+Seien $U_1, U_2, U_3$ independente, $\mathcal{U}([0,1])$-verteilte Random Variables. 
 
-Wir betrachten die stetigen ZV $L := \min(U_1, U_2, U_3)$ und $M:=\max(U_1, U_2, U_3)$.
+Wir betrachten die continuousen RV $L := \min(U_1, U_2, U_3)$ und $M:=\max(U_1, U_2, U_3)$.
 
-Zeige für beliebige $\phi, \psi: \R \to \R$ stückweise stetig und beschränkt, dass 
+Zeige für beliebige $\phi, \psi: \R \to \R$ stückweise continuous und bounded, dass 
 \[\E\left(\phi(M)\cdot\psi(L)\right) = \int\limits_{-\infty}\limits^\infty \int\limits_{-\infty}\limits^\infty \phi(m) \cdot \psi(l) \cdot6(m-l)\mathds{1}_{0\leq l\leq m \leq 1}\mathop{dl}\mathop{dm}\]
-Wegen Unabhängigkeit ist die gemeinsame Dichte durch $f(u_1, u_2, u_3) = \mathds{1}_{u_1 \in [0,1]}\mathds{1}_{u_2 \in [0,1]}\mathds{1}_{u_3 \in [0,1]}$ bestimmt.
+Wegen Independence ist die Joint Density durch $f(u_1, u_2, u_3) = \mathds{1}_{u_1 \in [0,1]}\mathds{1}_{u_2 \in [0,1]}\mathds{1}_{u_3 \in [0,1]}$ bestimmt.
 
 \begin{align*}
 	&\E(\phi(M)\psi(L)) \\

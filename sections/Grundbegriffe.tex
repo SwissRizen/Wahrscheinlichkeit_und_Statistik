@@ -1,7 +1,7 @@
 \section{Grundbegriffe}
-\subsection{Wahrscheinlichkeitsraum}
+\subsection{Probability Space}
 \begin{mainbox}{Axiome von Kolmogorov}
-    Das Tuple $(\Omega, \A, \P)$ ist ein \textbf{Wahrscheinlichkeitsraum} mit 
+    Das Tuple $(\Omega, \A, \P)$ ist ein \textbf{Probability Space} mit 
     \begin{enumerate}[label=\Roman*.]
         \item \textbf{Grundraum} $\Omega$ mit $\Omega \neq \emptyset$, wobei $\omega \in \Omega$ ein Elementarereignis ist.
         \item \textbf{$\sigma$-Algebra} $\A \subseteq \Pset(\Omega)$ wobei gilt:
@@ -43,7 +43,7 @@ Sei $A_1,A_2, \dots \in \A$, dann gilt:\\
 
     \textbf{Atome}
 
-        Sei $\Omega$ nicht leer und diskret. Sei $\F$ eine beliebige $\sigma$-Algebra über $\Omega$. 
+        Sei $\Omega$ nicht leer und discrete. Sei $\F$ eine beliebige $\sigma$-Algebra über $\Omega$. 
     
         Eine nichtleere Menge $A \in \F$ heisst \textbf{atomare} Menge von $\F$ falls für alle $B \in \F$ gilt:
         $$B \subseteq A \implies B = \emptyset \lor B = A$$
@@ -51,51 +51,51 @@ Sei $A_1,A_2, \dots \in \A$, dann gilt:\\
     
         Die Menge der atomaren Mengen von $\F$ bezeichnen wir mit Atom$(\F)$.
     
-        Jedes Element von $\F$ lässt sich als abzählbare Vereinigung von Elementen aus Atom$(\F)$ schreiben.
+        Jedes Element von $\F$ lässt sich als countablee Vereinigung von Elementen aus Atom$(\F)$ schreiben.
     
-\subsection{Bedingte Wahrscheinlichkeiten}
- Sei $(\Omega, \A, \P)$ ein Wahrscheinlichkeitsraum.
- \begin{mainbox}{Bedingte Wahrscheinlichkeit}
+\subsection{Conditional Probabilityen}
+ Sei $(\Omega, \A, \P)$ ein Probability Space.
+ \begin{mainbox}{Conditional Probability}
     Sei $A, B \in \A$ und $\P(B) > 0$, dann ist die \textbf{bedingte Wahrscheinlichkeit von $A$ gegeben $B$}
     $$\P(A|B) = \frac{\P(A \cap B)}{\P(B)}$$
  \end{mainbox}
-\textbf{Satz der totalen Wahrscheinlichkeit}
+\textbf{Law of total Probability}
 
 Sei $(B_i)_{i\in I}$ eine Partition von $\Omega$. Dann gilt für jedes beliebige $A \in \A$
 $$\P(A) = \sum_{i:\ \P(B_i)>0} \P(A|B_i)\P(B_i)$$
-\textbf{Satz von Bayes}
+\textbf{Bayes theorem}
 
-Aus der Definition der bedingten W'keit folgt sofort die Bayessche Formel, welche den Zusammenhang zwischen $\P(A|B)$ und $\P(B|A)$ beschreibt:
+Aus der Definition der bedingten Prob. folgt sofort die Bayessche Formel, welche den Zusammenhang zwischen $\P(A|B)$ und $\P(B|A)$ beschreibt:
 $$\P(B|A) = \frac{\P(A|B)\P(B)}{\P(A)}$$
-Mit dem \textbf{Satz der totalen W'keit} können wir $\P(A)$ umschreiben und kommen auf folgende Form:
+Mit dem \textbf{Law of total Prob.} können wir $\P(A)$ umschreiben und kommen auf folgende Form:
 
 Sei $(B_i)_{i\in I}$ eine \textbf{Partition} von $\Omega$. Dann gilt für jedes beliebige $A \in \A, \P(A) > 0$
 $$\P(B_i|A) = \frac{\P(A|B_i)\cdot\P(B_i)}{\sum_{j:\ \P(B_j)>0}\P(A|B_j)\cdot \P(B_j)}$$
 
 \textbf{Intuition Bayessche Statistik}
 
-In dieser Form würde man $A$ als das \textbf{eingetretene Ereignis} und die $B_i$ als die verschiedene \textbf{Hypothesen} verstehen. 
+In dieser Form würde man $A$ als das \textbf{eingetretene Event} und die $B_i$ als die verschiedene \textbf{Hypothesen} verstehen. 
 
 In der Bayesschen Statistik versucht man die Hypothese zu finden, so dass $\P(B_i|A)$ \textbf{maximiert} wird.
 
 (Wurde in der Vorlesung nicht weiter behandelt)
-\subsection{Unabhängigkeit} 
+\subsection{Independence} 
 \begin{mainbox}{}
-    Zwei Ereignisse $A, B \in \A$ heissen \textbf{unabhängig}, wenn 
+    Zwei Eventse $A, B \in \A$ heissen \textbf{independent}, wenn 
     $$\P(A\cap B) = \P(A) \cdot \P(B)$$
 \end{mainbox}
 \begin{itemize}
-    \item $\P(A) \in \{0, 1\} \implies A \text{ zu jedem Ereignis unabhängig}$
-    \item $A$ zu sich selbst unabhängig $\implies \P(A) \in \{0,1\}$
-    \item $A, B$ unabhängig $\implies$ $A, B^\complement$ unabhängig
+    \item $\P(A) \in \{0, 1\} \implies A \text{ zu jedem Event independent}$
+    \item $A$ zu sich selbst independent $\implies \P(A) \in \{0,1\}$
+    \item $A, B$ independent $\implies$ $A, B^\complement$ independent
 \end{itemize}
 Wenn $\P(A) > 0, \P(B) > 0$ gilt:\\
- $A,B$ unabhängig $\iff$ $\P(A|B)=\P(A)$ $\iff$ $\P(B|A)=\P(B)$
+ $A,B$ independent $\iff$ $\P(A|B)=\P(A)$ $\iff$ $\P(B|A)=\P(B)$
 \\
 \\
-Wir können die Definition der Unabhängigkeit auf beliebige Mengen von Ereignissen erweitern.
+Wir können die Definition der Independence auf beliebige Mengen von Eventsen erweitern.
 \begin{mainbox}{}
-    Eine Kollektion von Ereignissen $(A_i; i \in I)$ heisst \textbf{(stochastisch) unabhängig}, wenn 
-    $$J \subseteq I \text{ endlich} \implies \P\left(\bigcap_{i\in J} A_i\right) = \prod_{i \in J} \P(A_i)$$
+    Eine Kollektion von Eventsen $(A_i; i \in I)$ heisst \textbf{(stochastisch) independent}, wenn 
+    $$J \subseteq I \text{ finite} \implies \P\left(\bigcap_{i\in J} A_i\right) = \prod_{i \in J} \P(A_i)$$
 \end{mainbox}
 
