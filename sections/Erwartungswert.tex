@@ -1,6 +1,6 @@
 \section{Expected Value}
-\begin{mainbox}{Expected Value - Discretee RV}
-    Sei $X: \Omega \to \R$ eine discretee Random Variable, $W_X := X(\Omega)$ und $\phi: \R \to \R$ eine Abbildung. Falls die Summe well-defined ist, gilt: 
+\begin{mainbox}{Expected Value - Discrete RV}
+    Sei $X: \Omega \to \R$ eine discrete Random Variable, $W_X := X(\Omega)$ und $\phi: \R \to \R$ eine Abbildung. Falls die Summe well-defined ist, gilt: 
     $$\mathbb{E}(\phi(X)) := \sum_{x \in W_X} \phi(x) \cdot \P(X = x)$$
     Wenn $X: \Omega \to \N_0$, kann man auch den Expected Value als
     $$\mathbb{E}(X) = \sum_{n = 0}^{\infty}\P(X > n)$$
@@ -82,7 +82,7 @@ $$\phi(\E(X)) \leq \E(\phi(X))$$
 \end{subbox}
 
 \subsection{Conditional Expected Value}
-Sei $(\Omega, \A, \P)$ ein discreteer Probability Space und $X:\Omega \to \R$ eine Random Variable. 
+Sei $(\Omega, \A, \P)$ ein discreter Probability Space und $X:\Omega \to \R$ eine Random Variable. 
 
 Für ein beliebiges $B \in A, \P(B) > 0$ definieren wir den \textbf{bedingten Expected Value} $X$ bedingt durch $B$ als
 \begin{align*}

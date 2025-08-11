@@ -6,7 +6,7 @@ Sei ($\Omega, \A, \P$) ein Probability Space.
  
     Die Eigenschaft \textbf{messbar} ist bezüglich dem Wahrscheinlichkeitsmass $\P: \A \to [0,1]$ relevant. Dann ist $\P(X \in B) := \P(\{\omega \in \Omega \mid X(\omega) \in B\})$ well-defined.
 \end{mainbox}
-Bei discreteem $\Omega$, können wir die rechte Seite vom '$\iff$' durch $\forall x \in \R: X^{-1}(\{x\})\in \A \ (1)$ ersetzen. 
+Bei discretem $\Omega$, können wir die rechte Seite vom '$\iff$' durch $\forall x \in \R: X^{-1}(\{x\})\in \A \ (1)$ ersetzen. 
 
 Für die Messbarkeit von $X$ ist nur $X(\Omega) \subseteq \R$ entscheidend und jede Teilmenge $A \subseteq X(\Omega)$ ist countable (da $\Omega$ countable). Somit kann $X^{-1}(A)$ als countablee Vereinigung von $\bigcup_{x \in A} X^{-1}(\{x\})$ geschrieben werden. 
 \\$(1) \implies X^{-1}(A) \in \A$ per Def. $\sigma$-Algebra
@@ -60,15 +60,15 @@ Seien $X, Y: \Omega \to \R$ Random Variables: \\$X \leq Y$ a.s. $\iff$ $\P(X \le
     $$\P(X \in W) = 1$$
     Falls $\Omega$ finite oder countable ist, dann ist $X$ immer discrete.
 \end{mainbox}
-Die \textbf{Cum. Distribution Function} einer discreteen RV $X$: $$F_X(x)= \P(X \leq x)= \sum_{y\in W}p(y)\cdot \mathds{1}_{y\leq x}$$
-Die \textbf{Gewichtsfunktion} einer discreteen RV $X$: $$\forall x \in X(\Omega): p(x)= \P(X=x) \text{ wobei} \sum_{x \in X(\Omega)}p(x)= 1$$
+Die \textbf{Cum. Distribution Function} einer discreten RV $X$: $$F_X(x)= \P(X \leq x)= \sum_{y\in W}p(y)\cdot \mathds{1}_{y\leq x}$$
+Die \textbf{weight function} einer discreten RV $X$: $$\forall x \in X(\Omega): p(x)= \P(X=x) \text{ wobei} \sum_{x \in X(\Omega)}p(x)= 1$$
 
 \subsection{Discrete Distribution}
 \textbf{Bernoulli-Distribution} ($X \sim \text{Ber}(p)$): 
 
-$X(\Omega)= \{0, 1\}$ und die Gewichtsfunktion ist definiert durch
+$X(\Omega)= \{0, 1\}$ und die weight function ist definiert durch
 $$p(1):= \P(X = 1) = p \text{ und } p(0):=\P(X = 0) = 1 - p.$$
-\textbf{Binomialverteilung} ($X \sim \text{Bin}(n, p)$): 
+\textbf{Biniomial Distribution} ($X \sim \text{Bin}(n, p)$): 
 
 Wiederholung von $n$ independenten Bernoulli-Experimenten mit gleichem Parameter $p$. 
 $$p(k):= \P(X = k) = \binom{n}{k} \cdot p^k \cdot (1-p)^{n-k} \quad \forall k \in \{0,1,\ldots, n\}$$
@@ -78,7 +78,7 @@ Warten auf den $1$-ten Erfolg.
 $$p(k):= \P(X = k) = (1-p)^{k-1}\cdot p \quad \forall k \in \N\setminus\{0\}$$
 \textbf{Poisson-Distribution} ($X \sim \text{Poisson}(\lambda)$): 
 
-Grenzwert der Binomialverteilung für grosse $n$ und kleine $p$. 
+Grenzwert der Biniomial Distribution für grosse $n$ und kleine $p$. 
 $$p(k) := \P(X = k) = \frac{\lambda^k}{k!}\cdot e^{-\lambda} \quad \forall k \in \N_0, \lambda > 0$$
 \begin{enumerate}
     \item Für $X_n \sim \text{Bin}(n, \frac{\lambda}{n})$ gilt $\lim_{n \to \infty}\P(X_n = k) = \P(Y = k)$ wobei $Y \sim \text{Poisson}(\lambda)$.

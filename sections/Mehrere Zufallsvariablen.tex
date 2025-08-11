@@ -3,10 +3,10 @@
     Die \textbf{Joint Cum. Distribution Function} von $n$ Random Variables $X_1, \ldots, X_n$ (continuous oder discrete) ist die Abbildung $F: \R^n \to [0,1]$,
     $$(x_1, \ldots, x_n) \mapsto F(x_1, \ldots, x_n) := \P(X_1 \leq x_1, \ldots, X_n \leq x_n)$$
 \end{mainbox}
-\subsection{Discreteer Fall - Gewichtsfunktion}
-    Für $n$ discretee RV $X_1, \ldots, X_n$ definieren wir ihre \textbf{Joint Gewichtsfunktion} $p: \R^n \to [0,1]$ durch
+\subsection{Discreter Fall - weight function}
+    Für $n$ discrete RV $X_1, \ldots, X_n$ definieren wir ihre \textbf{Joint weight function} $p: \R^n \to [0,1]$ durch
     $$p(x_1, \ldots, x_n) := \P(X_1 = x_1, \ldots, X_n = x_n)$$
-    Aus der Jointn Gewichtsfunktion $p$ bekommt man die Joint Cum. Distribution Function mit
+    Aus der Jointn weight function $p$ bekommt man die Joint Cum. Distribution Function mit
     \begin{align*}
         F(x_1, \ldots, x_n) &= \P(X_1 \leq x_1, \ldots, X_n \leq x_n)\\
         &= \sum_{y_1 \leq x_1, \ldots, y_n \leq x_n}\P(X_1 = y_1, \ldots, X_n = y_n)\\
@@ -14,11 +14,11 @@
     \end{align*}    
 
 \begin{subbox}{}
-    Seien $X_1, \ldots, X_n$ \tbf{discretee} Random Variables in $(\Omega, \F, \P)$, sodass $X_1 \in W_1, \ldots, X_n \in W_n$ a.s. für $W_1, \ldots, W_n \subset \R$ finite oder countable.
+    Seien $X_1, \ldots, X_n$ \tbf{discrete} Random Variables in $(\Omega, \F, \P)$, sodass $X_1 \in W_1, \ldots, X_n \in W_n$ a.s. für $W_1, \ldots, W_n \subset \R$ finite oder countable.
 
-    Für $\phi: \R^n \to \R$ beliebig, ist $Z = \phi(X_1, \ldots, X_n)$ eine discretee Random Variable mit $Z \in W = \phi(W_1 \times \ldots \times W_n)$ a.s. . 
+    Für $\phi: \R^n \to \R$ beliebig, ist $Z = \phi(X_1, \ldots, X_n)$ eine discrete Random Variable mit $Z \in W = \phi(W_1 \times \ldots \times W_n)$ a.s. . 
 
-    Die Gewichtsfunktion von $Z$ ist gegeben durch $p_Z: W \to [0,1]$:
+    Die weight function von $Z$ ist gegeben durch $p_Z: W \to [0,1]$:
     $$p_Z(t) := \P(Z = t) = \sum_{\substack{x_1 \in W_1, \ldots, x_n \in W_n\\ \phi(x_1, \ldots, x_n) = t}} p(x_1, \ldots, x_n)$$
 \end{subbox}
 \begin{enumerate}
