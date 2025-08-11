@@ -22,7 +22,7 @@ Die Funktion erfüllt folgende Eigenschaften:
     \item $\forall a,b \in \R, a < b: \P(a < X \leq b) = F_X(b) -F_X(a)$ 
 \end{enumerate}
 
-\textbf{Left-continuouskeit}
+\textbf{Left-continuity}
 
 Die Cum. Distribution Function ist nicht immer left-continuous.
 \\Sei $F_X(a-) := \lim_{h \downarrow 0}F_X(a-h)$ für $a \in \R$ beliebig.
@@ -48,7 +48,7 @@ Intuitiv folgt daraus
 %     TBD
 % \end{subbox}
 
-\subsection{Discretee Random Variables}
+\subsection{Discrete Random Variables}
 Sei $A \in \F$ ein Event.\\
 Wir sagen $A$ tritt \textbf{almost surely (a.s.)} ein, falls $\P(A)= 1$.
 \\ \\
@@ -63,7 +63,7 @@ Seien $X, Y: \Omega \to \R$ Random Variables: \\$X \leq Y$ a.s. $\iff$ $\P(X \le
 Die \textbf{Cum. Distribution Function} einer discreteen RV $X$: $$F_X(x)= \P(X \leq x)= \sum_{y\in W}p(y)\cdot \mathds{1}_{y\leq x}$$
 Die \textbf{Gewichtsfunktion} einer discreteen RV $X$: $$\forall x \in X(\Omega): p(x)= \P(X=x) \text{ wobei} \sum_{x \in X(\Omega)}p(x)= 1$$
 
-\subsection{Discretee Distribution}
+\subsection{Discrete Distribution}
 \textbf{Bernoulli-Distribution} ($X \sim \text{Ber}(p)$): 
 
 $X(\Omega)= \{0, 1\}$ und die Gewichtsfunktion ist definiert durch
@@ -72,7 +72,7 @@ $$p(1):= \P(X = 1) = p \text{ und } p(0):=\P(X = 0) = 1 - p.$$
 
 Wiederholung von $n$ independenten Bernoulli-Experimenten mit gleichem Parameter $p$. 
 $$p(k):= \P(X = k) = \binom{n}{k} \cdot p^k \cdot (1-p)^{n-k} \quad \forall k \in \{0,1,\ldots, n\}$$
-\textbf{Geometrice Distribution} ($X \sim \text{Geo}(p)$): 
+\textbf{Geometric Distribution} ($X \sim \text{Geo}(p)$): 
 
 Warten auf den $1$-ten Erfolg. 
 $$p(k):= \P(X = k) = (1-p)^{k-1}\cdot p \quad \forall k \in \N\setminus\{0\}$$
@@ -114,14 +114,14 @@ $$f_{a,b}(x) = \begin{cases}
     0 & x \notin [a,b]\\
     \frac{1}{b-a} & x \in [a,b]
 \end{cases}$$
-\textbf{Exponentialverteilung} ($T \sim \text{Exp}(\lambda)$): 
+\textbf{Exponential Distribution} ($T \sim \text{Exp}(\lambda)$): 
 
 Lebensdauer oder Wartezeit eines allg. Eventses (Continuouss Äquivalent zur Geometricen Distribution).
 $$f_\lambda(x) = \begin{cases}
     \lambda e^{-\lambda x} & x \ge 0,\\
     0 & x < 0.
 \end{cases}$$ 
-\textbf{Normalverteilung} ($X \sim \mathcal{N}(m, \sigma^2)$): 
+\textbf{Normal Distribution} ($X \sim \mathcal{N}(m, \sigma^2)$): 
 
 Häufig verwendete Distribution. Undefiniert für $\sigma = 0$.
 $$f_{m, \sigma}(x) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-m)^2}{2\sigma^2}}$$
